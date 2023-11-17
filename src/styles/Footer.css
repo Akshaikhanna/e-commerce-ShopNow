@@ -1,0 +1,15 @@
+.media{
+    text-decoration: none;
+    color: white;
+}
+
+.text{
+    font-size: 72px;
+    background: -webkit-linear-gradient(#eee, #1238a0);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.copyrights{
+    text-align: center!important ;
+}

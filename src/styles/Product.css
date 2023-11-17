@@ -1,0 +1,38 @@
+.addtocart {
+  background-color: #ff9f00 !important;
+  color: white !important;
+}
+
+.purchase{
+    background-color: #fb641b !important;
+    color: white !important;
+    margin-left: 10% !important;
+}
+
+.purchasefrom{
+  margin-top: -12%;
+  margin-left: 65%;
+  position: sticky;
+}
+
+.details{
+  margin-top: 2%;
+  height: 40px;
+  text-align: center;
+  font-weight: 400;
+  background-color: #1976d2;
+  color: white;
+}
+
+.card{
+  height: 50% !important;
+}
+
+.footer{
+  margin-top: 1%;
+  position: static;
+}
+
+.category-buttons{
+  margin-top: 1.7%;
+}
