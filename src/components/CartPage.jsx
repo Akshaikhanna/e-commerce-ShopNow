@@ -64,6 +64,7 @@ function CartPage() {
             <img src={logo} width="30" height="30" alt="logo" />
             ShopNow
           </Navbar.Brand>
+          
           <Nav className="ms-auto">
             <Form className="d-flex">
               <FormControl
