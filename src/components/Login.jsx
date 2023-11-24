@@ -75,6 +75,11 @@ const Login = () => {
       nav("/product");
     } catch (error) {
       console.log("Error signIn", error);
+      toast.error("Invalid Email or Password", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 1000,
+        theme: "dark",
+      });
     }
   };
 

@@ -104,6 +104,8 @@ function Product() {
       .catch((error) => {
         console.log(error);
       });
+      localStorage.removeItem("User")
+      nav("/")
   };
 
   return (
@@ -146,6 +148,7 @@ function Product() {
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </Form>
+            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link>
               <BsCart3 size={20} onClick={handleClick} className="Bscart" />
               <span>{cartCount}</span>

@@ -28,6 +28,14 @@ function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
+    const storeduser = localStorage.getItem("User");
+    console.log(storeduser);
+    if (storeduser) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  useEffect(() => {
     fetch("https://fakestoreapi.com/products?limit=4")
       .then((res) => res.json())
       .then((data) => setProduct(data));
@@ -35,7 +43,9 @@ function Home() {
 
   const handlePurchase = () => {
     if (isLoggedIn) {
-      setIsLoggedIn("Product purchased!");
+      window.location.href = "/product";
+    } else if (isLoggedIn) {
+      window.location.href = "/signup";
     } else {
       window.location.href = "/signup";
     }

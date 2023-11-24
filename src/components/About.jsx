@@ -17,6 +17,7 @@ function About() {
             ShopNow
           </Navbar.Brand>
           <Nav className="ms-auto">
+            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link className="mx-5" href="/signup">
               Login
             </Nav.Link>
@@ -24,7 +25,7 @@ function About() {
         </Navbar>
       </>
       <Container>
-        <Card sx={{mt:11}}>
+        <Card sx={{ mt: 11 }}>
           <div style={{ marginTop: "2rem" }}>
             <Typography variant="h4" gutterBottom>
               About ShopNow

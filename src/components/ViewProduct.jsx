@@ -12,6 +12,7 @@ import { Button, Nav, Navbar } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import logo from "../assets/logo-9.png";
+import "../styles/Product.css";
 
 function ViewProduct() {
   const [orderItem, setOrderItem] = useState([]);
@@ -91,7 +92,9 @@ function ViewProduct() {
                   </Typography>
                 </CardContent>
                 <CardActions marginTop="3%">
-                  <Button onClick={handleClick}>Purchase</Button>
+                  <Button onClick={handleClick} className="placeorder">
+                    PLACE ORDER
+                  </Button>
                 </CardActions>
               </Grid>
             </Grid>

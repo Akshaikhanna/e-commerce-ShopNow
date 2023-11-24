@@ -103,7 +103,7 @@ function CartPage() {
           </div>
         ) : (
           <Container>
-            <Grid>
+            <Grid item xs={12} md={8}>
               {cartItems.map((item) => (
                 <Grid item xs={12} sm={6} md={3} key={item.id}>
                   <Card
@@ -181,13 +181,27 @@ function CartPage() {
                 </Grid>
               ))}
             </Grid>
-
-            {/* <Typography variant="body1" color="textSecondary">
-              Total Quantity: {calculateTotalQuantity()}
-            </Typography>
-            <Typography variant="body1" color="textSecondary">
-              Total Price: ₹{calculateTotalPrice().toFixed(2)}
-            </Typography> */}
+            {/* <Grid item xs={12} lg={6}>
+              <Card>
+                <CardContent>
+                  <CardContent>
+                    <Typography variant="body1" color="textSecondary">
+                      Total Quantity: {calculateTotalQuantity()}
+                    </Typography>
+                  </CardContent>
+                  <CardContent>
+                    <Typography variant="body1" color="textSecondary">
+                      Delivery Charge: FREE
+                    </Typography>
+                  </CardContent>
+                  <CardContent>
+                    <Typography variant="body1" color="textSecondary">
+                      Total Price: ₹{calculateTotalPrice().toFixed(2)}
+                    </Typography>
+                  </CardContent>
+                </CardContent>
+              </Card>
+            </Grid> */}
           </Container>
         )}
       </Container>

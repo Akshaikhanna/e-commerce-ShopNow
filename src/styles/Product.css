@@ -3,19 +3,20 @@
   color: white !important;
 }
 
-.purchase{
-    background-color: #fb641b !important;
-    color: white !important;
-    margin-left: 10% !important;
+.purchase {
+  background-color: #fb641b !important;
+  color: white !important;
+  margin-left: 10% !important;
+  border: none !important;
 }
 
-.purchasefrom{
+.purchasefrom {
   margin-top: -12%;
   margin-left: 65%;
   position: sticky;
 }
 
-.details{
+.details {
   margin-top: 2%;
   height: 40px;
   text-align: center;
@@ -24,15 +25,20 @@
   color: white;
 }
 
-.card{
+.card {
   height: 50% !important;
 }
 
-.footer{
+.footer {
   margin-top: 1%;
   position: static;
 }
 
-.category-buttons{
+.category-buttons {
   margin-top: 1.7%;
+}
+
+.placeorder{
+  background-color: #fb641b !important;
+  border: none;
 }
