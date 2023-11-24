@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
@@ -10,6 +10,10 @@ import { useNavigate } from "react-router-dom";
 import { EMAIL_REGEX, ERROR_MESSAGE } from "../Error/Error";
 import { auth } from "../Auth/Auth";
 import { ToastContainer, toast } from "react-toastify";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import "react-toastify/dist/ReactToastify.css";
 
 const StyledCard = styled(Grid)`
@@ -50,6 +54,7 @@ const validate = (values) => {
 };
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false)
   const nav = useNavigate();
   const initialValues = {
     email: "",
@@ -60,6 +65,8 @@ const Login = () => {
     try {
       const { email, password } = values;
       await auth.signInWithEmailAndPassword(email, password);
+      const UserDetails = {email,password}
+      localStorage.setItem("User",JSON.stringify(UserDetails))
       toast.success("Successfully Logged In", {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 1000,
@@ -114,11 +121,23 @@ const Login = () => {
                   label="Password"
                   variant="outlined"
                   fullWidth
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   value={formik.values.password}
                   onChange={formik.handleChange}
                   helperText={formik.touched.password && formik.errors.password}
-                  inputProps={{ maxLength: 8 }} // Set max length to 8 characters
+                  inputProps={{ maxLength: 8 }} 
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          edge="end"
+                          onClick={() => setShowPassword(!showPassword)}
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
                 />
               </Grid>
             </Grid>

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { useFormik } from "formik";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -9,6 +9,10 @@ import { styled } from "@mui/system";
 import { useNavigate } from "react-router-dom";
 import { EMAIL_REGEX, ERROR_MESSAGE } from "../Error/Error";
 import { auth } from "../Auth/Auth";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 const StyledCard = styled(Grid)`
   width: 100%;
@@ -48,6 +52,7 @@ const validate = (values) => {
 };
 
 const SignUp = () => {
+  const [showPassword, setShowPassword] = useState(false)
   const nav = useNavigate();
   const initialValues = {
     email: "",
@@ -64,7 +69,6 @@ const SignUp = () => {
     }
   };
 
-  // Applied custom validation
   const formik = useFormik({
     initialValues,
     onSubmit,
@@ -106,11 +110,23 @@ const SignUp = () => {
                 label="Password"
                 variant="outlined"
                 fullWidth
-                type="password"
+                type={showPassword?"text":"password"}
                 value={formik.values.password}
                 onChange={formik.handleChange}
                 helperText={formik.touched.password && formik.errors.password}
                 inputProps={{ maxLength: 8 }}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        edge="end"
+                        onClick={() => setShowPassword(!showPassword)}
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
               />
             </Grid>
           </Grid>
