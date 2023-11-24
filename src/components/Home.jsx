@@ -6,6 +6,7 @@ import img1 from "../assets/img1.webp";
 import img2 from "../assets/img2.webp";
 import img3 from "../assets/img3.webp";
 import img4 from "../assets/img4.webp";
+import img5 from "../assets/img5.webp";
 import logo from "../assets/logo-9.png";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "../styles/Home.css";
@@ -78,6 +79,9 @@ function Home() {
           <SwiperSlide>
             <img src={img4} alt="product" />
           </SwiperSlide>
+          <SwiperSlide>
+            <img src={img5} alt="product" />
+          </SwiperSlide>
         </Swiper>
       </>
       <div className="product-container">
@@ -110,7 +114,7 @@ function Home() {
                       flexGrow: 1,
                       display: "flex",
                       flexDirection: "column",
-                      marginBottom:"8px"
+                      marginBottom: "8px",
                     }}
                   >
                     <Typography variant="body2">
@@ -123,7 +127,7 @@ function Home() {
                       justifyContent: "space-between",
                     }}
                   >
-                    <div style={{marginLeft:"2%"}}>
+                    <div style={{ marginLeft: "2%" }}>
                       <Typography>Price: ₹{item.price}</Typography>
                     </div>
                     <div>

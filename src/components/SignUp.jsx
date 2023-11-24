@@ -1,10 +1,10 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
-import Typography from '@mui/material/Typography';
+import Typography from "@mui/material/Typography";
 import { styled } from "@mui/system";
 import { useNavigate } from "react-router-dom";
 import { EMAIL_REGEX, ERROR_MESSAGE } from "../Error/Error";
@@ -52,7 +52,7 @@ const validate = (values) => {
 };
 
 const SignUp = () => {
-  const [showPassword, setShowPassword] = useState(false)
+  const [showPassword, setShowPassword] = useState(false);
   const nav = useNavigate();
   const initialValues = {
     email: "",
@@ -110,7 +110,7 @@ const SignUp = () => {
                 label="Password"
                 variant="outlined"
                 fullWidth
-                type={showPassword?"text":"password"}
+                type={showPassword ? "text" : "password"}
                 value={formik.values.password}
                 onChange={formik.handleChange}
                 helperText={formik.touched.password && formik.errors.password}

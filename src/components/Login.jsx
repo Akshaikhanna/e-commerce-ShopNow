@@ -54,7 +54,7 @@ const validate = (values) => {
 };
 
 const Login = () => {
-  const [showPassword, setShowPassword] = useState(false)
+  const [showPassword, setShowPassword] = useState(false);
   const nav = useNavigate();
   const initialValues = {
     email: "",
@@ -65,8 +65,8 @@ const Login = () => {
     try {
       const { email, password } = values;
       await auth.signInWithEmailAndPassword(email, password);
-      const UserDetails = {email,password}
-      localStorage.setItem("User",JSON.stringify(UserDetails))
+      const UserDetails = { email, password };
+      localStorage.setItem("User", JSON.stringify(UserDetails));
       toast.success("Successfully Logged In", {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 1000,
@@ -125,7 +125,7 @@ const Login = () => {
                   value={formik.values.password}
                   onChange={formik.handleChange}
                   helperText={formik.touched.password && formik.errors.password}
-                  inputProps={{ maxLength: 8 }} 
+                  inputProps={{ maxLength: 8 }}
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
